@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 
+
 // CONFIGURATION
 require('dotenv').config()
 const PORT = process.env.PORT
@@ -21,6 +22,7 @@ app.use(express.static('public'))
 //app.set('views,_dirname+'/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+
 
 // ROUTES
 app.get('/', (req, res) => {
