@@ -5,7 +5,7 @@ function Edit ({bread, index}) {
     return (
       <Default>
         <h2>Edit a bread</h2>
-        <form >
+        <form action={`/breads/${bread.id}?_method=PUT`} method="POST">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -20,13 +20,13 @@ function Edit ({bread, index}) {
             name="image"
             id="image"
             defaultValue={bread.image}
-            />
+          />
           <label htmlFor="hasGluten">Has Gluten?</label>
           <input
             type="checkbox"
             name="hasGluten"
             id="hasGluten"
-            defaultChecked={bread.hasGlueten}
+            defaultChecked={bread.hasGluten}
           />
           <br />
           <input type="submit"/>
@@ -34,8 +34,6 @@ function Edit ({bread, index}) {
       </Default>
     )
 }
-
-<form action={`/breads/${index}?_method=PUT`} method="POST"></form>
 
 
 module.exports = Edit
